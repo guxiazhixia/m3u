@@ -1,10 +1,1 @@
-{
-  "title": "GDFuruixi",
-  "urls": [
-    {"name": "电影", "url": "https://www.gdfuruixi.com/list/1.html"},
-    {"name": "电视剧", "url": "https://www.gdfuruixi.com/list/2.html"},
-    {"name": "综艺", "url": "https://www.gdfuruixi.com/list/3.html"},
-    {"name": "动漫", "url": "https://www.gdfuruixi.com/list/4.html"}
-  ],
-  "spider": "https://raw.githubusercontent.com/guxiazhixia/m3u/refs/heads/main/gdfuruixi_spider.js"
-}
+{"title":"GDFuruixi","urls":[{"name":"电影","url":"https://www.gdfuruixi.com/list/1.html"},{"name":"电视剧","url":"https://www.gdfuruixi.com/list/2.html"},{"name":"综艺","url":"https://www.gdfuruixi.com/list/3.html"},{"name":"动漫","url":"https://www.gdfuruixi.com/list/4.html"}],"spider":"https://raw.githubusercontent.com/guxiazhixia/m3u/refs/heads/main/gdfuruixi_spider.js"}
