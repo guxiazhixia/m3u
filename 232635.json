@@ -1,0 +1,29 @@
+{
+  "spider": "https://github.com/guxiazhixia/m3u/raw/refs/heads/main/XBPQ.jar;md5;ea2690fc66083afe1431071968e60395",  // 远程JAR地址需替换，MD5校验码可选
+  "sites": [
+    {
+      "key": "232635",
+      "name": "232635┃XBPQ",
+      "type": 3,                      // 固定为3，表示JAR解析模式
+      "api": "csp_XBPQ",              // 必须与JAR内爬虫类名一致
+      "searchable": 1,                // 支持搜索
+      "ext": {
+        "分类url": "https://www.232635.com/vodshow/{cateId}---------{catePg}---.html",  // 动态分类页URL
+        "分类": "电影$1#剧集$2#综艺$3#动漫$4",  // 需与网站实际分类ID匹配
+        "数组": "class=\"hl-list-item\"&&</li>",      // 视频列表容器选择器
+        "标题": "class=\"title\"&&text",              // 标题元素选择器
+        "链接": "a&&href",                            // 详情页链接属性
+        "图片": "img&&data-original",                 // 封面图属性
+        "播放链接": "class=\"player\"&&iframe&&src",  // 播放地址提取规则
+        "User-Agent": "Mozilla/5.0",                 // 反爬UA
+        "调试": "1"                                   // 可选，开启抓取日志
+      }
+    }
+  ],
+  "parses": [
+    {
+      "name": "通用解析",
+      "url": "https://jx.jsonplayer.com/player/?url="  // 备用解析线路
+    }
+  ]
+      }
