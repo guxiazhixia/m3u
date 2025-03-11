@@ -1,21 +1,28 @@
 {
-  "sites": [
-    {
-      "key": "ddys",
-      "name": "低端影视",
-      "type": 3,
-      "api": "csp_Ddys",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "spider": "https://github.com/guxiazhixia/m3u/raw/refs/heads/main/gdfuruixi_spider.js", // 替换为支持CORS的地址
-      "categories": ["电影", "电视剧", "综艺", "动漫"],
-      "filters": {
-        "电影": [
-          {"key": "year", "name": "年份", "value": ["2024", "2023", "2022"]},
-          {"key": "area", "name": "地区", "value": ["韩国", "美国", "中国大陆"]}
-        ]
-      }
-    }
-  ]
+  "key": "18j.tv",
+  "name": "18j┃BPQ",
+  "type": 3,
+  "api": "csp_XBPQ",
+  "searchable": 1,
+  "quickSearch": 1,
+  "ext": {
+    "分类url": "https://18j.tv/t/{cateId}-{catePg}/",
+    "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16",
+    "数组": "<li&&</li>",
+    "图片": "data-original=\"&&\"",
+    "标题": "title=\"&&\"",
+    "链接": "href=\"&&\"",
+    "副标题": "<span>&&</span>",
+    "播放数组": "<script type=\"text/javascript\">var player_aaaa&&</script>",
+    "播放链接": "\"url\":\"&&\"",
+    "嗅探词": ".m3u8#.mp4",
+    "免嗅": "1",
+    "搜索url": "https://18j.tv/s/?wd={wd}",
+    "搜索模式": "1",
+    "搜索数组": "<li&&</li>",
+    "搜索图片": "data-original=\"&&\"",
+    "搜索标题": "title=\"&&\"",
+    "搜索链接": "href=\"&&\"",
+    "搜索副标题": "<span>&&</span>"
+  }
 }
