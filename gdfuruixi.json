@@ -1,1 +1,21 @@
-{"title":"GDFuruixi","urls":[{"name":"电影","url":"https://www.gdfuruixi.com/list/1.html"},{"name":"电视剧","url":"https://www.gdfuruixi.com/list/2.html"},{"name":"综艺","url":"https://www.gdfuruixi.com/list/3.html"},{"name":"动漫","url":"https://www.gdfuruixi.com/list/4.html"}],"spider":"https://raw.githubusercontent.com/guxiazhixia/m3u/refs/heads/main/gdfuruixi_spider.js"}
+{
+  "sites": [
+    {
+      "key": "ddys",
+      "name": "低端影视",
+      "type": 3,
+      "api": "csp_Ddys",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "spider": "https://github.com/guxiazhixia/m3u/raw/refs/heads/main/gdfuruixi_spider.js", // 替换为支持CORS的地址
+      "categories": ["电影", "电视剧", "综艺", "动漫"],
+      "filters": {
+        "电影": [
+          {"key": "year", "name": "年份", "value": ["2024", "2023", "2022"]},
+          {"key": "area", "name": "地区", "value": ["韩国", "美国", "中国大陆"]}
+        ]
+      }
+    }
+  ]
+}
