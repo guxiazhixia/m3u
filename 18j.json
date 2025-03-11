@@ -3,6 +3,8 @@
   "name": "18j┃BPQ",
   "type": 3,
   "api": "csp_XBPQ",
+  "jar": "https://example.com/xbpq.jar",
+
   "ext": {
     "分类url": "https://18j.tv/t/{cateId}-{catePg}/",
     "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16",
