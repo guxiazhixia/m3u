@@ -1,87 +1,20 @@
 {
-  "sites": [
-    {
-      "key": "gdfuruixi",
-      "name": "广德福利影院",
-      "type": 3,
-      "api": "csp_Js",
-      "ext": "{\"class\":{\"1\":\"电影\",\"2\":\"电视剧\",\"3\":\"综艺\",\"4\":\"动漫\"}}",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 1,
-      "playUrl": "https://www.gdfuruixi.com/gdplay/{{id}}.html",
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Referer": "https://www.gdfuruixi.com/",
-        "Cookie": "PHPSESSID=xxxxxx; security_session_verify=xxxxxx;" // 需动态获取的会话信息
-      },
-      "parser": {
-        "list": {
-          "method": "GET",
-          "pattern": "/list/(\\d+)\\.html",
-          "parseScript": `
-            // 验证点1：列表容器选择器
-            const items = parseDom(pdfa(document, '.stui-content__list li', [
-              ['.title@text', 'title'],
-              ['img.lazyload@data-original', 'img'], // 验证点2：懒加载属性
-              ['a@href', 'id|/gdplay/(\\\\d+)\\.html/']
-            ]));
-            console.log('[DEBUG] 列表项数量:', items.length);
-            result = items;
-          `,
-          "format": [
-            {
-              "key": "img",
-              "format": [
-                "regex:^(//?)", "https:",  // 协议补全
-                "regex:/upload/tt/", "/cover/", // 路径转换
-                "abs:https://xinlangtupian.com" // 验证点3：CDN域名
-              ]
-            }
-          ]
-        },
-        "detail": {
-          "method": "GET",
-          "parseScript": `
-            // 验证点4：m3u8变量提取
-            const nowMatch = pdfh(document, 'script:contains(var now)').match(/var\\s+now\\s*=\\s*["']([^"']+)["']/);
-            const nextMatch = pdfh(document, 'script:contains(var next)').match(/var\\s+next\\s*=\\s*["']([^"']+)["']/);
-            
-            // 验证点5：详情信息选择器
-            const title = pdfh(document, 'h1.video-title') || pdfh(document, 'h1.detail-title');
-            const year = pdfh(document, 'span:contains(年份) + em') || '未知';
-            
-            console.log('[DEBUG] now_m3u8:', nowMatch?.[1]);
-            result = {
-              title: title.trim(),
-              year: year.trim(),
-              now_m3u8: nowMatch?.[1] || '',
-              next_m3u8: nextMatch?.[1] || ''
-            };
-          `,
-          "format": {
-            "now_m3u8": [
-              {
-                "regex": "//play\\.xluuss\\.com//",
-                "replace": "g.xlzyd.com:9999/hls/533/$dynamicDate/" // 验证点6：动态日期
-              },
-              {
-                "regex": "/index\\.m3u8$",
-                "replace": "/plist$1.ts"
-              }
-            ]
-          },
-          "dynamicDate": "` + new Date().toISOString().slice(0,10).replace(/-/g,'') + `" // 格式：YYYYMMDD
-        }
-      }
-    }
-  ],
-  "parses": [
-    {
-      "name": "XLYD动态解析",
-      "type": 3,
-      "url": "js:input.replace(/(\\d+)(?=.*\\.ts$)/g, m => String.fromCharCode(97 + parseInt(m)))" // 验证点7：TS序号解码
-    }
-  ],
-  "ijkCode": "mediacodec=1,opensles=1,protocol_whitelist=http,https,rtmp,tcp"
+  "key": "DiDiYS",
+  "name": "低端影视",
+  "type": 3,
+  "api": "csp_DiDiYS",
+  "ext": {
+    "分类url": "https://ddys.pro/category/{cat}/page/{catePg}/",
+    "分类": "电影$movie#电视剧$tv#动漫$animation#综艺$variety",
+    "数组": "class=\"post-box-list\"&&class=\"item\">",
+    "标题": "title=\"&&\"",
+    "图片": "data-original=\"&&\"",
+    "链接": "href=\"&&\"[替换:https://ddys.pro//https://ddys.pro/]",
+    "线路数组": "class=\"play-nav\"&&</ul>[替换:线路1>>主线路#线路2>>备用线路]",
+    "播放数组": "class=\"player-wrapper\"&&</script>",
+    "嗅探词": ".m3u8#.mp4#.flv",
+    "搜索url": "https://ddys.pro/?s={wd}",
+    "headers": "User-Agent:Mozilla/5.0#Referer:https://ddys.pro/",
+    "调试": "1"
+  }
 }
