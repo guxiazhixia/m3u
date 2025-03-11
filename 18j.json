@@ -1,0 +1,18 @@
+{
+  "key": "18j.tv",
+  "name": "18j┃BPQ",
+  "type": 3,
+  "api": "csp_XBPQ",
+  "ext": {
+    "分类url": "https://18j.tv/t/{cateId}-{catePg}/",
+    "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16",
+    "数组": "<li&&</li>",
+    "图片": "data-original=\"&&\"",
+    "标题": "title=\"&&\"",
+    "链接": "href=\"&&\"",
+    "副标题": "<span>&&</span>",
+    "播放数组": "<script type=\"text/javascript\">var player_aaaa&&</script>",
+    "播放链接": "\"url\":\"&&\"",
+    "免嗅": "1"
+  }
+}
