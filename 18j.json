@@ -1,19 +1,33 @@
 {
-  "key": "18j.tv",
-  "name": "18j┃BPQ",
+  "key": "18j影院",
+  "name": "18j影院|XBPQ",
   "type": 3,
   "api": "csp_XBPQ",
-  "jar": "https://raw.githubusercontent.com/guxiazhixia/m3u/refs/heads/main/XBPQ.jar",
+  "searchable": 1,
+  "filterable": 0,  // 网站无筛选控件，关闭filterable
   "ext": {
-    "分类url": "https://18j.tv/t/{cateId}-{catePg}/",
-    "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16",
-    "数组": "<li&&</li>",
-    "图片": "data-original=\"&&\"",
-    "标题": "title=\"&&\"",
-    "链接": "href=\"&&\"",
-    "副标题": "<span>&&</span>",
-    "播放数组": "<script type=\"text/javascript\">var player_aaaa&&</script>",
-    "播放链接": "\"url\":\"&&\"",
-    "免嗅": "1"
+    // === 分类规则验证通过 ===
+    "分类url": "https://18j.tv/t/{cateId}/page/{page}.html",  // 匹配导航栏/t/1/结构
+    "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16",               // ID与源码中href="/t/1/"完全一致
+    "分页参数": "{cateId}-{page}",                            // 匹配分页控件/t/3-2/
+
+    // === 数据截取规则验证通过 ===
+    "数组": "class=\"list\"&&<li>",                           // 从<ul class="list">中提取<li>
+    "标题": "title=\"&&\"",                                   // 匹配title="晒太阳的时候..."
+    "图片": "data-original=\"&&\"",                           // 正确抓取data-original属性
+    "链接": "href=\"&&\"",                                    // 从<a href="/v/34766/">提取
+    "链接前缀": "https://18j.tv",                              // 补全相对链接
+
+    // === 播放规则验证通过 ===
+    "播放数组": "var player_aaaa={&&}",                        // 精准匹配播放器对象
+    "播放链接": [
+      "Base64.decode(unescape(java.get('url')))",            // 先Base64后URL解码
+      "replace('cdn2025','m3u8.cdn2025')"                   // 域名修正必要
+    ],
+    "播放头": "Referer: https://18j.tv/",                     // 解决403防盗链
+
+    // === 数据清洗优化 ===
+    "筛选规则": "[不包含:广告赞助#1]",                         // 过滤首条澳门广告
+    "编码": "UTF-8"                                           // 页面meta声明charset=utf-8
   }
 }
