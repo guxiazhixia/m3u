@@ -8,10 +8,10 @@
       "searchable": 1,
       "filterable": 0,
       "ext": {
-        "分类url": "https://18j.tv/t/{cateId}/page/{page}.html",
+        "分类url": "https://18j.tv/t/{cateId}-{page}/",
         "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16",
-        "数组": "class=\"list\"&&<li>",
-        "标题": "title=\"&&\"",
+        "数组": "class=\"list\"&&</li>",
+        "标题": "class=\"title\">&&</div>",
         "图片": "data-original=\"&&\"",
         "链接": "href=\"&&\"",
         "链接前缀": "https://18j.tv",
