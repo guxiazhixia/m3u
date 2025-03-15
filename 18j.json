@@ -1,12 +1,23 @@
 {
-  "key": "18j影院",
-  "name": "18j影院|XPath",
-  "type": 3,
-  "api": "csp_XPath",
-  "searchable": 1,
-  "filterable": 0,
-  "ext": {
-    "分类url": "https://18j.tv/t/{cateId}/page/{page}.html",
-    "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16"
-  }
+  "sites": [
+    {
+      "key": "18j影院",
+      "name": "18j影院|XBPQ",
+      "type": 3,
+      "api": "csp_XBPQ",
+      "searchable": 1,
+      "filterable": 0,
+      "ext": {
+        "分类url": "https://18j.tv/t/{cateId}/page/{page}.html",
+        "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16",
+        "数组": "class=\"list\"&&<li>",
+        "标题": "title=\"&&\"",
+        "图片": "data-original=\"&&\"",
+        "链接": "href=\"&&\"",
+        "链接前缀": "https://18j.tv",
+        "播放数组": "var player_aaaa={&&}",
+        "播放链接": "Base64.decode(unescape(java.get('url')))"
+      }
+    }
+  ]
 }
