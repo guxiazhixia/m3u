@@ -1,12 +1,12 @@
 {
   "key": "18j影院",
-  "name": "18j影院|XBPQ",
+  "name": "18j影院|XPath",
   "type": 3,
-  "api": "csp_XBPQ",
+  "api": "csp_XPath",
   "searchable": 1,
   "filterable": 0,
   "ext": {
     "分类url": "https://18j.tv/t/{cateId}/page/{page}.html",
-    "分类": ["国产$1", "日韩$2"]
+    "分类": "国产$1#日韩$2#欧美$3#伦理$4#动漫$16"
   }
 }
