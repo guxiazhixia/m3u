@@ -1,12 +1,46 @@
 {
-  "sites": [
-    {
-      "key": "18j影院",
-      "name": "18j影院|简单",
-      "type": 1,
-      "api": "https://18j.tv/t/1-{page}/",
-      "searchable": 1,
-      "filterable": 0
-    }
-  ]
+  "bookSourceName": "中文成人文学网",
+  "bookSourceUrl": "https://blog.xbookcn.net/",
+  "bookSourceType": 0,
+  "bookSourceGroup": "小说",
+  "enable": true,
+  "ruleSearch": {
+    "searchUrl": "https://blog.xbookcn.net/search?q={{key}}",
+    "bookList": "div.date-outer",
+    "name": "h3.post-title a@text",
+    "author": "",
+    "kind": "span.post-labels a@text",
+    "bookUrl": "h3.post-title a@href",
+    "nextUrl": "a#Blog1_blog-pager-older-link@href"
+  },
+  "ruleExplore": {
+    "exploreUrl": "https://blog.xbookcn.net/||分类浏览:\n精选作品|https://blog.xbookcn.net/search/label/精选作品\n现代情色|https://blog.xbookcn.net/search/label/现代情色\n日本情色|https://blog.xbookcn.net/search/label/日本情色\n西洋情色|https://blog.xbookcn.net/search/label/西洋情色\n伴侣交换|https://blog.xbookcn.net/search/label/伴侣交换\n武侠情色|https://blog.xbookcn.net/search/label/武侠情色\n奇幻科幻|https://blog.xbookcn.net/search/label/奇幻科幻\n家庭乱伦|https://blog.xbookcn.net/search/label/家庭乱伦\n性爱调教|https://blog.xbookcn.net/search/label/性爱调教\n多人群交|https://blog.xbookcn.net/search/label/多人群交\n教师学生|https://blog.xbookcn.net/search/label/教师学生\n古典情色|https://blog.xbookcn.net/search/label/古典情色\n历史情色|https://blog.xbookcn.net/search/label/历史情色\n同性情色|https://blog.xbookcn.net/search/label/同性情色\n都市生活|https://blog.xbookcn.net/search/label/都市生活\n乡间记趣|https://blog.xbookcn.net/search/label/乡间记趣\n疯狂暴露|https://blog.xbookcn.net/search/label/疯狂暴露",
+    "bookList": "div.date-outer",
+    "name": "h3.post-title a@text",
+    "author": "",
+    "kind": "span.post-labels a@text",
+    "bookUrl": "h3.post-title a@href",
+    "nextUrl": "a#Blog1_blog-pager-older-link@href"
+  },
+  "ruleBookInfo": {
+    "name": "h3.post-title a@text",
+    "author": "",
+    "kind": "span.post-labels a@text",
+    "intro": "div.post-body p@text",
+    "coverUrl": "",
+    "lastChapter": ""
+  },
+  "ruleToc": {
+    "chapterList": "div.post-body p",
+    "chapterName": "text",
+    "chapterUrl": ""
+  },
+  "ruleContent": {
+    "content": "div.post-body p@text",
+    "nextContentUrl": ""
+  },
+  "httpUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+  "concurrentRate": "10",
+  "loginUrl": "",
+  "weight": 0
 }
