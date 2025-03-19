@@ -1,44 +1,26 @@
 {
   "name": "52龙禁漫",
   "version": "1",
-  "script": "@rule:js",
+  "type": "comic",
+  "ruleType": "xpath",
   "host": "https://52longjm.com",
-  "searchUrl": "https://52longjm.com/cata.php?key={key}&page={page}",
-  "headers": {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-  },
+  "searchUrl": "https://52longjm.com/cata.php?key={key}",
   "home": {
-    "@rule": "//div[@class='module-main scroll-box']",
-    "list": ".//div[@class='module-items module-poster-items-base']/a[@class='module-poster-item module-item']",
-    "name": ".//div[@class='module-poster-item-title']/text()",
-    "url": "@href",
-    "urlJoin": true,
-    "cover": ".//img/@data-original"
+    "list": "//div[contains(@class, 'module-items')]/a[contains(@class, 'module-poster-item')]",
+    "name": ".//div[contains(@class, 'module-poster-item-title')]/text()",
+    "url": "@href"
   },
   "search": {
-    "list": "//a[@class='module-poster-item module-item']",
-    "name": ".//div[@class='module-poster-item-title']/text()",
-    "url": "@href",
-    "urlJoin": true,
-    "cover": ".//img/@data-original"
+    "list": "//a[contains(@class, 'module-poster-item')]",
+    "name": ".//div[contains(@class, 'module-poster-item-title')]/text()",
+    "url": "@href"
   },
   "detail": {
-    "cover": "//div[@class='module-item-pic']/img/@data-original",
-    "description": "//div[@class='module-info-introduction-content show-desc']/p/text()",
-    "author": "//div[.//span[text()='作者：']]//a/text()",
-    "update": "normalize-space(//div[.//span[text()='更新：']]//div[@class='module-info-item-content'])",
-    "chapterList": "//div[@class='module-play-list-content module-play-list-base']/a[@class='module-play-list-link']",
+    "chapterList": "//div[contains(@class, 'module-play-list-content')]/a[contains(@class, 'module-play-list-link')]",
     "chapterName": "./span/text()",
-    "chapterUrl": "@href",
-    "urlJoin": true,
-    "order": "desc"
+    "chapterUrl": "@href"
   },
   "content": {
-    "imageUrl": "//img[@class='lazy']/@data-original",
-    "proxy": true,
-    "lazyLoad": {
-      "trigger": "scroll",
-      "replaceSrc": "data-original"
-    }
+    "imageUrl": "//img[contains(@class, 'lazy')]/@data-original"
   }
 }
