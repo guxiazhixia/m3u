@@ -1,0 +1,19 @@
+{
+    "spider": "",
+    "wallpaper": "https://www.fulleroticmovies.net/",
+    "homepage": "https://www.fulleroticmovies.net/",
+    "sites": [
+        {
+            "key": "fulleroticmovies",
+            "name": "FullEroticMovies",
+            "type": 3,
+            "api": "https://your-domain.com/pyramid_spider.py",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 0
+        }
+    ],
+    "parses": [],
+    "flags": [],
+    "lads": []
+}
