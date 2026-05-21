@@ -1,0 +1,28 @@
+{
+  "sites": [
+    {
+      "key": "fulleroticmovies",
+      "name": "FulleroticMovies | 经典复古色情影片",
+      "type": 3,
+      "api": "https://github.com/guxiazhixia/m3u/raw/refs/heads/main/fulleroticmovies_spider.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    }
+  ],
+  "rules": [
+    {
+      "name": "fulleroticmovies",
+      "hosts": ["fulleroticmovies"],
+      "regex": ["#proxy"]
+    }
+  ],
+  "doh": [
+    {
+      "name": "HTTPS",
+      "url": "https://doh.pub/dns-query",
+      "ip": ""
+    }
+  ],
+  "wallpaper": "https://tuapi.fatsing.com/api.php"
+}
