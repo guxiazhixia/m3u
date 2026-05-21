@@ -7,7 +7,7 @@
             "key": "fulleroticmovies",
             "name": "FullEroticMovies",
             "type": 3,
-            "api": "https://your-domain.com/pyramid_spider.py",
+            "api": "https://raw.githubusercontent.com/guxiazhixia/m3u/refs/heads/main/pyramid_spider.py",
             "searchable": 1,
             "quickSearch": 1,
             "filterable": 0
